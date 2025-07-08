@@ -1,4 +1,9 @@
 <div class="row border p-4">
+  <div class="row mb-3">
+    <div class="col-2 align-self-start">
+      <a><%= link_to("Back to Jobs", root_path()) %></a>
+    </div>
+  </div>
   <div class="col">
     <div class="display-6"><%= @job.title %></div>
     <div class="fs-4 mb-3"><%= @job.company %> - <%= @job.location %></div>
