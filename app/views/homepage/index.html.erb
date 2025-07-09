@@ -1,5 +1,5 @@
 <div class="row">
-  <table class="table">
+  <table class="table table-dark">
     <thead>
       <th scope="col">Title</th>
       <th scope="col">Description</th>
@@ -14,7 +14,11 @@
           <td><%= truncate(job.description, length: 50) %></td>
           <td><%= job.company %></td>
           <td><%= job.location %></td>
-          <td><%= link_to("View", job_path(job)) %></td>
+          <td>
+            <button type="button" class="btn btn-link">
+              <%= link_to("View", job_path(job)) %>
+            </button>
+          </td>
         </tr>
       <% end %>
     </tbody>
