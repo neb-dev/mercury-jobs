@@ -15,9 +15,7 @@
           <td><%= job.company %></td>
           <td><%= job.location %></td>
           <td>
-            <button type="button" class="btn btn-link">
-              <%= link_to("View", job_path(job)) %>
-            </button>
+            <%= link_to("View", job_path(job), class: "btn btn-link text-decoration-none" ) %>
           </td>
         </tr>
       <% end %>
