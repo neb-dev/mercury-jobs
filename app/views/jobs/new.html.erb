@@ -1,31 +1,31 @@
-<div class="row border p-4">
-  <div class="row mb-3">
-    <div class="col-2 align-self-start">
-      <a><%= link_to("Back to Jobs", root_path()) %></a>
+<div class="row border p-4 justify-content-center">
+  <div class="col-6">
+    <div class="row mb-3 justify-content-center">
+      <div class="display-6"><%= @job.persisted? ? "Update Job" : "Create Job"%></div>
     </div>
-  </div>
-  <div class="row mb-3">
-    <div class="display-6">Create Job</div>
-  </div>
-  <div class="col-6 justify-content-center">
-    <form action="POST">
-      <div class="mb-3">
-        <label for="job-title" class="form-label">Title</label>
-        <input type="text" name="title" id="job-title" class="form-control" />
-      </div>
-      <div class="mb-3">
-        <label for="job-company" class="form-label">Company</label>
-        <input type="text" name="company" id="job-company" class="form-control" />
-      </div>
-      <div class="mb-3">
-        <label for="job-location" class="form-label">Location</label>
-        <input type="text" name="location" id="job-location" class="form-control" />
-      </div>
-      <div class="mb-3">
-        <label for="job-description" class="form-label">Description</label>
-        <textarea id="job-description" class="form-control" rows="3"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary mt-3">Submit</button>
-    </form>
+    <div class="">
+      <%= form_with(model: @job, local: true, html: { class: "needs-validation"}) do |form| %>
+        <div class="mb-3">
+          <%= form.label :title, class: "form-label" %>
+          <%= form.text_field :title, class: "form-control" %>
+        </div>
+        <div class="mb-3">
+          <%= form.label :company, class: "form-label" %>
+          <%= form.text_field :company, class: "form-control" %>
+        </div>
+        <div class="mb-3">
+          <%= form.label :location, class: "form-label" %>
+          <%= form.text_field :location, class: "form-control" %>
+        </div>
+        <div class="mb-3">
+          <%= form.label :description, class: "form-label" %>
+          <%= form.text_area :description, class: "form-control", rows: 3, style: "resize: both" %>
+        </div>
+        <div class="mb-3 justify-content-center">
+          <%= form.submit @job.persisted? ? "Update" : "Create", class: "btn btn-primary" %>
+          <%= link_to("Cancel", root_path, class: "btn btn-link text-decoration-none", data: { confirm: "Are you sure you want to cancel?" }) %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
