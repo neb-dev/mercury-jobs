@@ -13,8 +13,10 @@ RSpec.describe "homepage/index.html.erb", type: :view do
 
   it "displays jobs" do
     assign(:jobs, [
-      Job.create!(title: "Dev", company: "Acme", location: "Remote", description: "Build stuff"),
-      Job.create!(title: "Designer", company: "DesignCo", location: "NYC", description: "Design things")
+      Job.create!(title: "Dev", company: "Acme", location: "Remote",
+                  description: "Build stuff"),
+      Job.create!(title: "Designer", company: "DesignCo", location: "NYC",
+                  description: "Design things")
     ])
     render
     expect(rendered).to match(/Acme/)
