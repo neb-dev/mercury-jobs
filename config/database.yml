@@ -24,7 +24,7 @@ development:
   database: mercury_jobs_development
   username: <%= ENV["DB_USERNAME"] || postgres %>
   password: <%= ENV["DB_PASSWORD"] || postgres %>
-  host: <%= ENV["DB_HOST"] %>
+  host: <%= ENV["DB_HOST"] || localhost %>
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -61,7 +61,7 @@ test:
   database: mercury_jobs_test
   username: <%= ENV["DB_USERNAME"] || postgres %>
   password: <%= ENV["DB_PASSWORD"] || postgres %>
-  host: <%= ENV["DB_HOST"] %>
+  host: <%= ENV["DB_HOST"] || localhost %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
