@@ -56,6 +56,9 @@ group :development, :test do
   gem "rspec-rails", "~> 8.0", ">= 8.0.1"
   # Extracting `assigns` and `assert_template` from ActionDispatch.
   gem "rails-controller-testing", "~> 1.0", ">= 1.0.5"
+
+  # Autoload dotenv in Rails.
+  gem "dotenv-rails", "~> 3.1", ">= 3.1.8"
 end
 
 group :development do
