@@ -1,7 +1,7 @@
-<div class="row border p-4 justify-content-center">
+<div class="row justify-content-center">
   <div class="col-6">
     <div class="row mb-3 justify-content-center">
-      <div class="display-6"><%= job.persisted? ? "Update Job" : "Create Job"%></div>
+      <h3><%= job.persisted? ? "Edit Job" : "Create Job"%></h3>
     </div>
     <div class="">
       <%= form_with(model: job, local: true, html: { class: "needs-validation"}) do |form| %>

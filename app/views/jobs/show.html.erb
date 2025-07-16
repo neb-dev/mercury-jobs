@@ -1,17 +1,28 @@
-<div class="row border p-4">
-  <div class="row mb-3">
-    <div class="col-2 align-self-start">
-      <a><%= link_to("Back to Jobs", root_path()) %></a>
+<div class="row px-4">
+  <div class="row mb-3 justify-content-around align-items-center">
+    <div class="col">
+      <%= link_to("Back to Jobs", root_path(), class: "btn btn-link p-0") %>
     </div>
   </div>
   <div class="col">
-    <div class="display-6"><%= @job.title %></div>
-    <div class="fs-4 mb-3"><%= @job.company %> - <%= @job.location %></div>
+    <div class="row align-items-center">
+      <div class="col">
+        <div class="display-6"><%= @job.title %></div>
+        <div class="fs-4 mb-3"><%= @job.company %> - <%= @job.location %></div>
+      </div>
+      <% if(notice) %>
+        <div class="col">
+          <p class="alert alert-success text-center p-1" role="alert">Job was successfully updated.</p>
+        </div>
+      <% end %>
+    </div>
     <p class="lead"><%= @job.description %></p>
   </div>
   <div class="col-2 d-flex flex-column gap-3">
-    <button>Apply</button>
-    <button>Save</button>
-    <button>Share</button>
+    <%= link_to("Apply", "#", class: "btn btn-success") %>
+    <%= link_to("Save", "#", class: "btn btn-primary") %>
+    <%= link_to("Share", "#", class: "btn btn-warning") %>
+    <%= link_to("Edit", edit_job_path(@job), class: "btn btn-secondary") %>
+    <%= link_to("Delete", "#", class: "btn btn-danger") %>
   </div>
 </div>

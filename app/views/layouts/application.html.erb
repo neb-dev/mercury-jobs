@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="bg-dark text-light">
   <head>
     <title><%= content_for(:title) || "Mercury Jobs" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -17,7 +17,7 @@
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
-  <body class="bg-dark text-light">
+  <body>
     <div class="container p-4">
       <%= render("shared/header") %>
       <%= yield %>
