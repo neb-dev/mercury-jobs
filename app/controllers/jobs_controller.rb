@@ -7,6 +7,15 @@ class JobsController < ApplicationController
     @job = Job.new()
   end
 
+  def create
+    @job = Job.new(job_params)
+    if @job.save
+      redirect_to(@job, notice: "Job created successfully.")
+    else
+      render(:new, status: :unprocessable_entity)
+    end
+  end
+
   def edit
     @job = Job.find(params[:id])
   end
@@ -16,7 +25,16 @@ class JobsController < ApplicationController
     if @job.update(job_params)
       redirect_to(@job, notice: "Job updated successfully.")
     else
-      render :edit, status: :unprocessable_entity
+      render(:edit, status: :unprocessable_entity)
+    end
+  end
+
+  def destroy
+    @job = Job.find(params[:id])
+    if @job.destroy
+      redirect_to(root_path(), notice: "Job deleted successfully.")
+    else
+      render(:show, status: :unprocessable_entity)
     end
   end
 
