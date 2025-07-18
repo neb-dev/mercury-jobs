@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <% if(@jobs.present?) %>
+      <table class="table border">
+        <thead>
+          <th scope="col">Title</th>
+          <th scope="col">Description</th>
+          <th scope="col">Company</th>
+          <th scope="col">Location</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <% @jobs.each do |job| %>
+            <tr class="align-middle">
+              <td><%= job.title %></td>
+              <td><%= truncate(job.description, length: 50) %></td>
+              <td><%= job.company %></td>
+              <td><%= job.location %></td>
+              <td>
+                <%= link_to("View", job_path(job), class: "btn btn-link text-decoration-none" ) %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <h3>No jobs available</h3>
+    <% end %>
+  </div>
+</div>

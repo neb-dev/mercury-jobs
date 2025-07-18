@@ -1,28 +1,8 @@
-<div class="row">
-  <% if(@jobs.present?) %>
-    <table class="table border">
-      <thead>
-        <th scope="col">Title</th>
-        <th scope="col">Description</th>
-        <th scope="col">Company</th>
-        <th scope="col">Location</th>
-        <th></th>
-      </thead>
-      <tbody>
-        <% @jobs.each do |job| %>
-          <tr class="align-middle">
-            <td><%= job.title %></td>
-            <td><%= truncate(job.description, length: 50) %></td>
-            <td><%= job.company %></td>
-            <td><%= job.location %></td>
-            <td>
-              <%= link_to("View", job_path(job), class: "btn btn-link text-decoration-none" ) %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  <% else %>
-    <h3>No jobs available</h3>
-  <% end %>
+<div class="container-fluid">
+  <div class="row text-center py-5" style="background-color: #00C896;">
+    <div class="col">
+      <h1 class="fw-bold">Guiding You to Greater Work</h1>
+      <h3>Speed up your career search</h3>
+    </div>
+  </div>
 </div>

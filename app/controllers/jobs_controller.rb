@@ -1,4 +1,8 @@
 class JobsController < ApplicationController
+  def index
+    @jobs = Job.all()
+  end
+
   def show
     @job = Job.find(params[:id])
   end
@@ -32,7 +36,7 @@ class JobsController < ApplicationController
   def destroy
     @job = Job.find(params[:id])
     if @job.destroy
-      redirect_to(root_path(), notice: "Job deleted successfully.")
+      redirect_to(jobs_path(), notice: "Job deleted successfully.")
     else
       render(:show, status: :unprocessable_entity)
     end

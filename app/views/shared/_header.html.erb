@@ -1,13 +1,15 @@
-<div class="row mb-4 px-4 justify-content-around align-items-center">
-  <div class="col">
-    <h1>
-      <%= link_to("Mercury Jobs", root_path(), 
-                  class: "text-decoration-none text-light") %>
-    </h1>
-  </div>
-  <div class="col">
-    <button type="button" class="btn btn-link">
-      <%= link_to("Create Job", new_job_path()) %>
+<nav class="navbar navbar-dark navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="<%= jobs_path() %>">Mercury Jobs</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<%= new_job_path() %>">Create Job</a>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
+</nav>
