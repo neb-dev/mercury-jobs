@@ -1,5 +1,12 @@
 <div class="container">
   <div class="row">
+    <% if(notice.present?) %>
+      <div class="p-0">
+        <p class="alert alert-danger text-center p-1 m-0 rounded-0" role="alert">
+          <%= notice %>
+        </p>
+      </div>
+    <% end %>
     <% if(@jobs.present?) %>
       <table class="table table-dark border border-secondary">
         <thead>
