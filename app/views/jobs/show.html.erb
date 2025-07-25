@@ -1,11 +1,14 @@
 <div class="container-fluid">
   <div class="row px-4 py-3 border border-secondary">
-    <% if(notice.present?) %>
-      <div class="row">
-        <p class="alert alert-success text-center p-1" role="alert">
-          <%= notice %>
-        </p>
-      </div>
+    <% if(flash.present?) %>
+      <% flash.each do |key, message| %>
+        <div class="row">
+          <p class="alert alert-success text-center p-1" role="alert">
+            <!-- Job created/updated successfully. -->
+            <%= message %>
+          </p>
+        </div>
+      <% end %>
     <% end %>
     <div class="row mb-3 justify-content-around align-items-center">
       <div class="col">
