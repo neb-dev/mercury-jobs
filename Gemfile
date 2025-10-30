@@ -56,7 +56,7 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   # rspec-rails integrates the Rails testing helpers into RSpec.
-  gem "rspec-rails", "~> 8.0", ">= 8.0.1"
+  gem "rspec-rails", "~> 8.0"
   # Extracting `assigns` and `assert_template` from ActionDispatch.
   gem "rails-controller-testing", "~> 1.0", ">= 1.0.5"
 
